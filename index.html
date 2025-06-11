@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0x Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="color-picker-app">
+            <h1 class="app-title">0x Color Picker</h1>
+            <p class="app-description">Select colors and get them in 0x hexadecimal format</p>
+            
+            <div class="color-picker-grid">
+                <!-- Color Preview -->
+                <div class="card preview-card">
+                    <div class="card__body">
+                        <h3>Color Preview</h3>
+                        <div class="color-preview" id="colorPreview"></div>
+                        <div class="output-section">
+                            <label class="form-label">0x Format:</label>
+                            <div class="output-group">
+                                <input type="text" class="form-control output-field" id="oxOutput" readonly>
+                                <button class="btn btn--primary copy-btn" id="copyBtn">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Color Picker -->
+                <div class="card picker-card">
+                    <div class="card__body">
+                        <h3>Color Picker</h3>
+                        <div class="form-group">
+                            <label class="form-label" for="colorPicker">Select Color:</label>
+                            <input type="color" class="color-input" id="colorPicker" value="#283d46">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="hexInput">Hex Code:</label>
+                            <input type="text" class="form-control" id="hexInput" placeholder="#283d46" maxlength="7">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RGB Sliders -->
+                <div class="card sliders-card">
+                    <div class="card__body">
+                        <h3>RGB Values</h3>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Red: <span class="slider-value" id="redValue">40</span>
+                            </label>
+                            <input type="range" class="slider red-slider" id="redSlider" min="0" max="255" value="40">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Green: <span class="slider-value" id="greenValue">61</span>
+                            </label>
+                            <input type="range" class="slider green-slider" id="greenSlider" min="0" max="255" value="61">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">
+                                Blue: <span class="slider-value" id="blueValue">70</span>
+                            </label>
+                            <input type="range" class="slider blue-slider" id="blueSlider" min="0" max="255" value="70">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copy feedback -->
+            <div class="copy-feedback" id="copyFeedback">
+                <span class="status status--success">Copied to clipboard!</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
